@@ -1,36 +1,25 @@
 import { TeamCard } from "./TeamMember";
 function About() {
 
-  const ahad = {
-    name: "Abdul Ahad",
-    designation: "Front-end Engineer",
+  const nikita = {
+    name: "Nikita Valmiki",
+
     image:
       "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
   };
-  const danish = {
-    name: "Muhammad Danish",
-    designation: "Backend-end Engineer",
+  const subhanshee = {
+    name: "Subhanshee Verma",
+
     image:
       "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
   };
-  const abubakar = {
-    name: "Muhammad Abubakar",
-    designation: "Front End Developer",
+  const isha = {
+    name: "Isha",
+
     image:
       "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
   };
-  const muneeb = {
-    name: "Muneeb Ahmed",
-    designation: "Front End Developer",
-    image:
-      "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
-  };
-  const arsal = {
-    name: "Syed Arsal",
-    designation: "Database",
-    image:
-      "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
-  };
+
 
   return (
     <>
@@ -38,11 +27,9 @@ function About() {
         Meet Our Team!
       </h1>
       <div className="py-20 sm:py-25 flex gap-10 flex-wrap justify-center align-center">
-        <TeamCard member={ahad} />
-        <TeamCard member={danish} />
-        <TeamCard member={abubakar} />
-        <TeamCard member={arsal} />
-        <TeamCard member={muneeb} />
+        <TeamCard member={nikita} />
+        <TeamCard member={subhanshee} />
+        <TeamCard member={isha} />
       </div>
     </>
   );

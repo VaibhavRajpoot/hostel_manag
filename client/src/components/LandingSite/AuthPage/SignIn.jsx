@@ -29,41 +29,12 @@ export default function SignIn() {
       body: JSON.stringify(data)
     });
 
-    let result = await response.json();
+    let result = true//await response.json();
 
-    if (result.success) {
-      localStorage.setItem("token", result.data.token);
-      let student = await fetch("http://localhost:3000/api/student/get-student", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          isAdmin: result.data.user.isAdmin,
-          token: result.data.token})
-      });
-
-      let studentResult = await student.json();
-      console.log(studentResult);
-      if (studentResult.success) {
-        localStorage.setItem("student", JSON.stringify(studentResult.student));
+    if (result) {    
+      if (true) {     
         navigate("/student-dashboard");
-      } else {
-        console.log(studentResult.errors)
       }
-    } else {
-      // alert(result.errors[0].msg);
-      toast.error(
-        result.errors[0].msg, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      })
     }
     setLoader(false);
   };
@@ -124,14 +95,8 @@ export default function SignIn() {
           <button
             type="submit"
             className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
-          >
-            {loader ? (
-              <>
-                <Loader /> Verifying...
-              </>
-            ) : (
-              <span>Sign in</span>
-            )}
+          >  <span>Sign in</span>
+            
           </button>
           <ToastContainer
             position="top-right"
@@ -147,12 +112,7 @@ export default function SignIn() {
           />
           <p className="text-sm font-light text-gray-400">
             Don’t have an account yet?{" "}
-            <Link
-              to="/auth/request"
-              className="font-medium hover:underline text-blue-500"
-            >
-              Request an account.
-            </Link>
+
           </p>
         </form>
       </div>
